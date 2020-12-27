@@ -3,19 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	jb := []string{"James", "Bond", "Shaken, not stirred"}
-	fmt.Println(jb)
+	x := make([]string, 50, 50) // make([]T, length, capacity)
+	x = []string{`Alabama`, `Alaska`, `Arizona`, `Arkansas`, `California`, `Colorado`, `Connecticut`, `Delaware`, `Florida`, `Georgia`, `Hawaii`, `Idaho`, `Illinois`, `Indiana`, `Iowa`, `Kansas`, `Kentucky`, `Louisiana`, `Maine`, `Maryland`, `Massachusetts`, `Michigan`, `Minnesota`, `Mississippi`, `Missouri`, `Montana`, `Nebraska`, `Nevada`, `New Hampshire`, `New Jersey`, `New Mexico`, `New York`, `North Carolina`, `North Dakota`, `Ohio`, `Oklahoma`, `Oregon`, `Pennsylvania`, `Rhode Island`, `South Carolina`, `South Dakota`, `Tennessee`, `Texas`, `Utah`, `Vermont`, `Virginia`, `Washington`, `West Virginia`, `Wisconsin`, `Wyoming`}
 
-	mp := []string{"Miss", "Moneypenny", "Hello, James"}
-	fmt.Println(mp)
+	fmt.Println(x)      // prints [0,0,0,0,0,0,0,0,0,0]
+	fmt.Println(len(x)) // prints 10
+	fmt.Println(cap(x)) // prints 12
 
-	xp := [][]string{jb, mp}
-	fmt.Println(xp)
-
-	for i, v := range xp { // if using "for _, v", the "_" means that we don't need the "index", so it will be thrown away
-		fmt.Println("record:", i)
-		for j, val := range v {
-			fmt.Printf("\tindex position: %v\thas value: %v\n", j, val)
-		}
+	for i := 0; i < len(x); i++ {
+		fmt.Println(i, x[i])
 	}
 }

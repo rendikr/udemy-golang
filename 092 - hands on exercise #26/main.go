@@ -3,14 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	x := make([]string, 50, 50) // make([]T, length, capacity)
-	x = []string{`Alabama`, `Alaska`, `Arizona`, `Arkansas`, `California`, `Colorado`, `Connecticut`, `Delaware`, `Florida`, `Georgia`, `Hawaii`, `Idaho`, `Illinois`, `Indiana`, `Iowa`, `Kansas`, `Kentucky`, `Louisiana`, `Maine`, `Maryland`, `Massachusetts`, `Michigan`, `Minnesota`, `Mississippi`, `Missouri`, `Montana`, `Nebraska`, `Nevada`, `New Hampshire`, `New Jersey`, `New Mexico`, `New York`, `North Carolina`, `North Dakota`, `Ohio`, `Oklahoma`, `Oregon`, `Pennsylvania`, `Rhode Island`, `South Carolina`, `South Dakota`, `Tennessee`, `Texas`, `Utah`, `Vermont`, `Virginia`, `Washington`, `West Virginia`, `Wisconsin`, `Wyoming`}
+	x := []int{42, 43, 44, 45, 46, 47, 48, 49, 50, 51}
+	fmt.Println(x)
 
-	fmt.Println(x)      // prints [0,0,0,0,0,0,0,0,0,0]
-	fmt.Println(len(x)) // prints 10
-	fmt.Println(cap(x)) // prints 12
-
-	for i := 0; i < len(x); i++ {
-		fmt.Println(i, x[i])
-	}
+	x = append(x[:3], x[6:]...)
+	fmt.Println(x)
 }

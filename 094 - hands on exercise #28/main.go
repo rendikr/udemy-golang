@@ -3,22 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	m := map[string][]string{
-		"bond_james": []string{
-			"Shaken, not stirred", "Martinis", "Women",
-		},
-		"moneypenny_miss": []string{
-			"James Bond", "Literature", "Computer Science",
-		},
-		"chiffre_le": []string{
-			"Cards", "Money", "Stock",
-		},
-	}
+	jb := []string{"James", "Bond", "Shaken, not stirred"}
+	fmt.Println(jb)
 
-	for k, v := range m {
-		fmt.Println("This is the record for", k)
-		for i, val := range v {
-			fmt.Println("\t", i, val)
+	mp := []string{"Miss", "Moneypenny", "Hello, James"}
+	fmt.Println(mp)
+
+	xp := [][]string{jb, mp}
+	fmt.Println(xp)
+
+	for i, v := range xp { // if using "for _, v", the "_" means that we don't need the "index", so it will be thrown away
+		fmt.Println("record:", i)
+		for j, val := range v {
+			fmt.Printf("\tindex position: %v\thas value: %v\n", j, val)
 		}
 	}
 }
